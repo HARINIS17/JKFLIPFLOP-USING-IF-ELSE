@@ -34,15 +34,115 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+
+Step1: Define the specifications and initialize the design. 
+
+Step2: Declare the name of the entity and architecture by using VHDL source code. 
+
+Step3: Write the source code in VERILOG. 
+
+Step4: Check the syntax and debug the errors if found, obtain the synthesis  report. 
+
+Step5: Verify the output by simulating the source code. 
+
+Step6: Write all possible combinations of input using the test bench. 
+
+Step7: Obtain the place and route report. 
+
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+Program for flipflops and verify its truth table in quartus using Verilog programming.
+
+Developed by:HARINI S
+
+RegisterNumber:24900110
+
+module jk_flipflop(j, k, clk, rst, q, qbar); 
+
+ input j; 
+    
+  input k; 
+    
+  input clk; 
+    
+  input rst; 
+    
+  output q; 
+    
+  output qbar; 
+    
+  reg q; 
+  
+  reg qbar; 
+  
+  always @ (posedge(clk) or posedge(rst))  begin 
+  
+  if (rst==1'b1) 
+  
+  begin 
+
+  q=1'b0; 
+  
+  qbar=1'b1; 
+  
+  end
+  
+  else if (j==1'b0 && k==1'b0) 
+  
+  begin 
+  
+  q=q; 
+  
+  qbar=qbar; 
+  
+  end 
+  
+  else if (j==1'b0 && k==1'b1) 
+  
+  begin 
+  
+  q=1'b0; 
+  
+  qbar=1'b1; 
+  
+  end 
+  
+  else if (j==1'b1 && k==1'b0) 
+
+  begin 
+  
+  q=1'b1; 
+  
+  qbar=1'b0; 
+  
+  end 
+  
+  else 
+  
+  begin 
+  
+  q=~q; 
+  
+  qbar=~qbar; 
+  
+  end 
+  
+  end  
+  
+  endmodule
+  
+
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+![Screenshot (11)](https://github.com/user-attachments/assets/f367c4c7-6eba-40a8-a9f5-27df0072f72a)
+
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![Screenshot (10)](https://github.com/user-attachments/assets/045807e1-47d2-4214-bb37-f4c24346b832)
+
 **RESULTS**
+
+Thus the OUTPUT’s of Flip Flops are verified by synthesizing and simulating the VERILOG code.
